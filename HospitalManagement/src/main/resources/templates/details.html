@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+	integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+.size {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+</style>
+
+
+<title>Document</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	 <header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand text-danger" th:href="@{/hospital/ }">
+          <h1>HOSPITAL</h1>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button"
+          data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" th:href="@{/hospital/ }" aria-current="page">Home
+                <span class="visually-hidden">(current)</span></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/hospital/form}">Patient</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/hospital/Details}">Details</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+	<section class="container p-3">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10 text-center">
+				<h1 class="display-5 text-center">Patient's Details</h1>
+
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>S.No</th>
+							<th>Full Name</th>
+							<th>Date of Birth</th>
+							<th>Gender</th>
+							<th>Address</th>
+							<th>Contact</th>
+							<th>Doctor</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="s : ${data}">
+							<td th:text="${s.id}"></td>
+							<td th:text="${s.fullname}"></td>
+							<td th:text="${s.dob}"></td>
+							<td th:text="${s.gender}"></td>
+							<td th:text="${s.address}"></td>
+							<td th:text="${s.contact}"></td>
+							<td th:text="${s.doctor}"></td>
+							<td><a th:href="@{'/hospital/edit/' + ${s.id}}"
+								class="btn btn-primary btn-sm">Edit</a> <a
+								th:href="@{'/hospital/delete/' + ${s.id}}"
+								class="btn btn-danger btn-sm"
+								onclick="return confirm('Are you sure?')">Delete</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+			<div class="col-md-1"></div>
+
+		</div>
+
+	</section>
+	  <footer class="container py-3">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4">
+        <img  src="/Assests/mainHospital.jpg" class="size" alt="Hospital Logo">
+        <a th:href="@{/hospital/}" class="h1 text-dark text-decoration-none">Hospital</a><br>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <h5><a th:href="@{/hospital/}" class="text-dark text-decoration-none">Home Page</a></h5>
+        <h5><a th:href="@{/hospital/form}" class="text-dark text-decoration-none">Patient Form</a></h5>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

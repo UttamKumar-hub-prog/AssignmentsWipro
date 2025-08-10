@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+	crossorigin="anonymous"></script>
+<style>
+.size {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+</style>
+<title>Document</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand text-danger" th:href="@{/hospital/ }">
+					<h1>HOSPITAL</h1>
+				</a>
+				<button class="navbar-toggler d-lg-none" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+					aria-controls="collapsibleNavId" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end"
+					id="collapsibleNavId">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active"
+							th:href="@{/hospital/ }" aria-current="page">Home <span
+								class="visually-hidden">(current)</span></a></li>
+
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/hospital/form}">Patient</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/hospital/details}">Details</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<section class="container p-1">
+		<div class="row ">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+
+				<form th:action="@{/hospital/save}" th:object="${patient}"
+					method="post">
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" th:field="*{fullname}"
+							id="fullname" placeholder="" /> <label for="fullname">Full
+							Name</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="date" class="form-control" th:field="*{dob}" id="dob"
+							placeholder="" /> <label for="dob">Date of Birth</label>
+					</div>
+					<div class="form-floating mb-3">
+						<select class="form-control" id="gender" th:field="*{gender}">
+							<option value="">--Select--</option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						</select> <label for="gender">Gender</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="tel" class="form-control" th:field="*{contact}"
+							id="contact" placeholder="" /> <label for="contact">Contact
+							Number</label>
+					</div>
+					<div class="form-floating mb-3">
+						<textarea class="form-control" id="address" th:field="*{address}"
+							rows="3"></textarea>
+						<label for="address">Address</label>
+					</div>
+					<div class="form-floating mb-3">
+						<select class="form-control" id="doctor" th:field="*{doctor}">
+							<option value="">--Select--</option>
+							<option value="surgeon">Surgeon</option>
+							<option value="dermalogist">Dermalogist</option>
+							<option value="other">Other</option>
+						</select> <label for="doctor">Preferred Doctor</label>
+					</div>
+
+
+					<div class="text-center">
+						<button class="btn btn-primary text-center">Submit</button>
+					</div>
+
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+
+		</div>
+
+	</section>
+
+	<footer class="container py-3">
+		<div class="row text-center text-md-start">
+			<div class="col-md-4">
+				<img src="/Assests/mainHospital.jpg" class="size"
+					alt="Hospital Logo"> <a th:href="@{/hospital/}"
+					class="h1 text-dark text-decoration-none">Hospital</a><br>
+			</div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<h5>
+					<a th:href="@{/hospital/}" class="text-dark text-decoration-none">Home
+						Page</a>
+				</h5>
+				<h5>
+					<a th:href="@{/hospital/form}"
+						class="text-dark text-decoration-none">Patient Form</a>
+				</h5>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>

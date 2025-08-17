@@ -10,3 +10,9 @@ public class SimpleNameSorter {
         names.forEach(System.out::println);
     }
 }
+
+// Anu
+// Kiran
+// Ravi
+// Vijay
+// // Zoya

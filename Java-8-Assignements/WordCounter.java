@@ -11,3 +11,5 @@ public class WordCounter {
         System.out.println("Count: " + count);
     }
 }
+
+// Count: 2

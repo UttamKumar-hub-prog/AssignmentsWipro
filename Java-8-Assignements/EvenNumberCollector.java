@@ -12,3 +12,5 @@ public class EvenNumberCollector {
         System.out.println(evens);
     }
 }
+
+// [2, 4, 6]

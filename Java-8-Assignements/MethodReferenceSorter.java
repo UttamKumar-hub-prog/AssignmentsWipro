@@ -9,3 +9,8 @@ public class MethodReferenceSorter {
         names.forEach(System.out::println);
     }
 }
+
+// Anil
+// Neha
+// Ravi
+// Vijay

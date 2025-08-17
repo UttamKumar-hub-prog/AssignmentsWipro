@@ -27,3 +27,6 @@ public class LiskovSubstitutionPrinciple {
         a2.makeSound(); 
     }
 }
+
+// Dog barks
+// Cat meows

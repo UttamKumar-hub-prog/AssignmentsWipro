@@ -33,3 +33,7 @@ public class InterfaceSegregationPrinciple {
         p2.print();
     }
 }
+
+
+// Printing...
+// Just printing...

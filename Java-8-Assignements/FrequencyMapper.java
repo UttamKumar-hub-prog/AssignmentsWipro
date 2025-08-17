@@ -12,3 +12,5 @@ public class FrequencyMapper {
         System.out.println(freqMap);
     }
 }
+
+// {Kiran=1, Ravi=2, Anu=3}

@@ -23,3 +23,7 @@ public class OpenAndClose {
         n2.send("Hi");
     }
 }
+
+
+// Email: Hello
+// SMS: Hi

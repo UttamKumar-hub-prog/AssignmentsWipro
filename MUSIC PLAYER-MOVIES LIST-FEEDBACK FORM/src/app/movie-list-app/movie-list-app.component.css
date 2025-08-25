@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  
+  gap: 10px;
+  margin-top: 16px;
+  
+}
+
+mat-card {
+  text-align: center;
+  padding: 8px;
+  justify-content: center;
+   
+}
+
+.highlight {
+  border: 2px solid rgb(168, 164, 140);
+  box-shadow: 0 0 10px gold;
+}

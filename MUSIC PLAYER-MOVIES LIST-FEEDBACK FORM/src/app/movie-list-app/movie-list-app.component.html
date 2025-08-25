@@ -1,0 +1,37 @@
+<h2>🎬 Movie List</h2>
+
+ 
+<mat-form-field appearance="outline">
+  <mat-label>Filter by Genre</mat-label>
+  <mat-select [(value)]="selectedGenre">
+    @for (g of genres; track $index) {
+      <mat-option [value]="g">{{ g }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+ 
+<p>
+  ⭐ Average Rating: {{ averageRating | number:'1.1-1' }}
+</p>
+
+ 
+<div class="grid">
+  @for (movie of movies; track movie.title) {
+    @if (selectedGenre === 'All' || movie.genre === selectedGenre) {
+      <mat-card [ngClass]="{ 'highlight': movie.rating >= 5 }">
+        <img mat-card-image [src]="movie.poster" alt="movie">
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-subtitle>{{ movie.genre }}</mat-card-subtitle>
+        <p>{{ movie.description }}</p>
+
+       
+        <div class="stars">
+          @for (r of getStars(movie.rating); track $index) {
+            <mat-icon>star</mat-icon>
+          }
+        </div>
+      </mat-card>
+    }
+  }
+</div>

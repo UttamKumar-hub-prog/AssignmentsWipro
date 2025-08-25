@@ -1,0 +1,19 @@
+.feedbackForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(182, 169, 153);
+}
+
+mat-card {
+    background-color: rgba(170, 66, 80, 0.377);
+    max-width: 450px;
+    padding: 20px;
+    text-align: center;
+
+
+}
+mat-card-title{
+    color: white;
+}

@@ -1,0 +1,88 @@
+<!-- <h1>Hello uttam</h1>
+how its going!
+
+<!-- String interpolation -->
+<!-- <h1>{{message}}</h1> -->
+
+<!-- Property Binding -->
+<!-- <img [src]="'./assests/p.jpg'" [style.width]="'200px'"> <br>
+
+<button [disabled]="required">
+  <h1>Click Me</h1>
+</button>
+<br><br> -->
+
+<!-- Two way Binding - Bannana In the Box - [( )] -->
+<!-- <input type="text" [(ngModel)]="username" placeholder="Enter Your Name" />
+<br><br>
+{{username}}
+
+<br><br > -->
+
+<app-navbar></app-navbar>
+
+<!-- <br><br><br>
+
+<button (click)="increment()">increase</button>
+<br><br><br>
+<button (click)="decrement()"> Decrease</button>
+<br>
+Count: {{count}} -->
+
+
+<div class="container">
+  <h1 class="display-3 text-center">Calculator</h1>
+  <div class="row">
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-4">
+      <form>
+
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" name="number1" id="number1" [(ngModel)]="number1"
+            placeholder="Number 1" />
+          <label for="number1">Number 1</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" name="number2" id="number2" [(ngModel)]="number2"
+            placeholder="Number 2" />
+          <label for="number2"> Number 2</label>
+        </div>
+
+
+      </form>
+      <div class="mb-3 text-center">
+        <button class="btn btn-primary me-1 " (click)="add()">+</button>
+        <button class="btn btn-danger me-1" (click)="sub()">-</button>
+        <button class="btn btn-success  me-1" (click)="mup()">*</button>
+        <button class="btn btn-warning  me-1" (click)="division()">/</button>
+      </div>
+
+    </div>
+    <div class="col-lg-4 text-center">
+      <button class="btn btn-danger btn-outline-light">
+        <h1>Answer: {{calculate}}</h1>
+
+      </button>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+<!-- Class Binding -->
+<button [class.active]="xyz" >Click Me</button>
+
+<!-- style binding (inline styling)-->
+ 
+<div [style.color]="isHighLighted?'blue':'red'">inline sTyle</div>
+ 
+<!-- <-#-> template reference variable -->
+
+<input type="text" placeholder="enter your name" #user />
+<button (click)="showname(user.value)">Show Name</button>
+<br><br>
+{{typedName}}

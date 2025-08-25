@@ -1,0 +1,10 @@
+.img1{
+    width: 10px;
+    height: 10px;
+}
+
+.active{
+    color: aqua;
+    background-color: blue;
+    margin-top: 10px;
+}
